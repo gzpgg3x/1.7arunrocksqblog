@@ -3,9 +3,10 @@
 
 {% block blog_entries %}
     {% for object in object_list %}
-
-        <h1> {{object.title}} </h1>
-        <p> {{object.body}} </p>
-
+        <div class="post">
+            <h2> {{object.title}} </h2>
+            <p class="meta"> {{object.created}} </p>
+            {{ object.body|markdown }}
+        </div>
     {% endfor %}
 {% endblock %}
