@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% load django_markdown %}
+
+{% block blog_entries %}
+    {% for object in object_list %}
+
+        <h1> {{object.title}} </h1>
+        <p> {{object.body}} </p>
+
+    {% endfor %}
+{% endblock %}

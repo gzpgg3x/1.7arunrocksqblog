@@ -23,4 +23,5 @@ urlpatterns = patterns(
     url('^markdown/', include('django_markdown.urls')),    
     # url(r'^markdown/', include("django_markdown.urls")),
     # url(r'^', include('blog.urls')),
+    url(r'^', include('blog.urls')),
 )
