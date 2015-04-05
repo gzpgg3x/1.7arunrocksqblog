@@ -15,6 +15,10 @@ class Entry(models.Model):
 
     objects = EntryQuerySet.as_manager()
 
+    def get_absolute_url(self):
+        # return reverse("entry_detail", kwargs={"slug": self.slug}) 
+        return reverse("entry_detail", kwargs={"slug": self.slug})           
+
     def __str__(self):
         # return self.entry_title
         return self.title
@@ -23,5 +27,7 @@ class Entry(models.Model):
         verbose_name = "Blog Entry"
         verbose_name_plural = "Blog Entries"
         ordering = ['-created']
+
+
 
         
