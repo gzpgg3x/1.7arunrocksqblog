@@ -8,5 +8,8 @@
     {#<p class="meta"> {{object.created}} | Tagged under {{ object.tags.all|join:", " }} </p>#}
     <p class="post-meta"> {{ object.date_created }} tagged under {% for tag in object.tags.all %} <a class="post-category post-category-js" href="{% url "tag_index" slug=tag.slug %}">{{ tag }}</a> {% endfor %}
     </p>        
-    <p> {{ model.body }} </p>
+    {#<p> {{ model.body }} </p>#}
+    <div class="post-content">
+        {{ object.body_html|safe }}
+    </div>
 {% endblock %}
