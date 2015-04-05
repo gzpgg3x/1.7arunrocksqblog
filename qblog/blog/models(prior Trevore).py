@@ -5,23 +5,11 @@ class EntryQuerySet(models.QuerySet):
     def published(self):
         return self.filter(publish=True)
 
-# class Tag(models.Model):
-#     slug = models.SlugField(max_length=200, unique=True)
-
-#     def __str__(self):
-#         return self.slug
-
-#     def get_absolute_url(self):
-#         return reverse("tag_detail", kwargs={"slug": self.slug}) 
-
 class Tag(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
 
     def __str__(self):
-        return self.slug
-
-    def get_absolute_url(self):
-        return reverse("tag_index", kwargs={"slug": self.slug})       
+        return self.slug        
 
 class Entry(models.Model):
     title = models.CharField(max_length=200)

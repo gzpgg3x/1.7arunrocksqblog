@@ -18,4 +18,6 @@ urlpatterns = patterns(
     # url(r'^entry/(?P<slug>\S+)$', views.BlogDetail.as_view(), name='entry_detail'),
     # url(r'^entry/(?P<slug>\d+)$', views.BlogDetail.as_view(), name="entry_detail"),
     url(r'^entry/(?P<slug>\S+)$', views.BlogDetail.as_view(), name="entry_detail"),
+    # url(r'^tag/(?P<slug>\S+)$', views.TagIndex.as_view(), name="tag_index"),
+    url(r'^tag/(?P<slug>\S+)$', views.TagIndex.as_view(), name="tag_index"),
 )

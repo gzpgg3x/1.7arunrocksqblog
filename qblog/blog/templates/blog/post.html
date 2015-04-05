@@ -4,6 +4,9 @@
 {% block blog_entries %}
     <a> {{ model.created }} </a>
     {#<h1> {{ model.title}} </h1>#}
-    <h2><a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a></h2>    
+    <h2><a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a></h2>
+    {#<p class="meta"> {{object.created}} | Tagged under {{ object.tags.all|join:", " }} </p>#}
+    <p class="post-meta"> {{ object.date_created }} tagged under {% for tag in object.tags.all %} <a class="post-category post-category-js" href="{% url "tag_index" slug=tag.slug %}">{{ tag }}</a> {% endfor %}
+    </p>        
     <p> {{ model.body }} </p>
 {% endblock %}

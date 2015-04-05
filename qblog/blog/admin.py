@@ -13,6 +13,9 @@ class EntryAdmin(admin.ModelAdmin):
     list_display = ("title", "created")
     prepopulated_fields = {"slug": ("title",)}
 
+# class TagAdmin(admin.ModelAdmin):
+#     list_display = ("slug")
+
 
 # class EntryAdmin(admin.ModelAdmin):
 class EntryAdmin(MarkdownModelAdmin):
@@ -28,6 +31,7 @@ class EntryAdmin(MarkdownModelAdmin):
 
 # # admin.site.register(Entry)
 admin.site.register(models.Entry, EntryAdmin)
+admin.site.register(models.Tag)
 # admin.site.register(models.Entry, MarkdownModelAdmin)
 # admin.site.register(EntryAdmin, MarkdownModelAdmin)
 
